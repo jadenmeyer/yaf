@@ -31,13 +31,9 @@ static int readFile(cpuinfo *cpu) {
   memcpy(cpu->cpuname, first_half, length);
   cpu->cpuname[length] = '\0';
 
-  // TODO: free this!!!!!!!!!!!!!!!
-
   first_half = strstr(buffer, "cores");
   first_half = strstr(first_half, ": ");
   first_half += 2; // move ptr 2 spots
-  //
-  // sscanf(first_half, "%d", &cpu->cpucores);
   char *end;
   cpu->cpucores = (int)strtol(first_half, &end, 10);
   close(fd); // currently unsafe no check for fd being readable
