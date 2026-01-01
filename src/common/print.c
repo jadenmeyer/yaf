@@ -36,7 +36,8 @@ void printer(printinfo *print) {
   printf("%s   %s\n", pika[1], print->machine->sysname);
   printf("%s   %s\n", pika[2], print->machine->release);
   printf("%s   %s + %d\n", pika[3], print->cpu->cpuname, print->cpu->cpucores);
-  printf("%s   RAM: %.2lfGB/%.2lfGB\n", pika[4], raminfo.unused / GB_VALUE,
+  printf("%s   RAM: %.2lfGB/%.2lfGB\n", pika[4],
+         (raminfo.totalram - raminfo.unused) / GB_VALUE,
          raminfo.totalram / GB_VALUE);
   char *uptime_string = parse_uptime(print->system);
   printf("%s   %s\n", pika[5],
