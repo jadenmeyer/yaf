@@ -4,21 +4,18 @@
 
 A quick and simple Fetch program written in C.
 
-Likely general structure:
-OS
-Kernel
-Uptime
-CPU
-GPU
-RAM information
-Disk Space??
+Currently **only** works on Linux systems with an x86 CPU.
+Support for Arm may come in the near future.
 
-Anything else will come from later inspiration.
+YAF grabs the following data:
+- system name
+- kernel version
+- CPU & CPU cores
+- RAM 
+  - currently in use RAM / Total RAM
+- Uptime
+- Cool ASCII Pikachu
 
-# TODO
-1. Make a picture setter
-2. Documentation through cli
-3. Clean code/smash bugs
-4. Consistency in variables
+
 
 
