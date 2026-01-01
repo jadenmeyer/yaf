@@ -1,5 +1,7 @@
 # Yet Another Fetch
 
+![Terminal Photo](photos/yaf.png "YAF")
+
 A quick and simple Fetch program written in C.
 
 Likely general structure:
@@ -18,3 +20,5 @@ Anything else will come from later inspiration.
 2. Documentation through cli
 3. Clean code/smash bugs
 4. Consistency in variables
+
+
