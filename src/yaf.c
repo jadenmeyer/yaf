@@ -1,13 +1,7 @@
-#include <linux/sysinfo.h>
 #include <stdlib.h>
 #define _GNU_SOURCE
-// #include <stdio.h>
-//  #include <string.h>
 #include "common/print.h"
-// #include "cpu/cpu.h"
-// #include <sys/sysinfo.h>
-// #include <sys/utsname.h>
-
+#include "ram/ram.h"
 // TODO:
 // refine the parser for the CPU information
 // refine the printer methods
@@ -37,7 +31,7 @@ int main(int argc, char *argv[]) {
   getCPUInfo(info->cpu);
 
   printer(info);
-
+  readRamInfo();
   // should obfuscate this somewhere
   free(info->cpu->cpuname);
   free(info->cpu);
