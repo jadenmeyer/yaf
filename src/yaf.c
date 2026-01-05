@@ -7,18 +7,6 @@
 // refine the printer methods
 // create a new file to get GPU information???
 
-/*
-in case i decide to do gentoo logo again
-static struct photo p = {.cols[0] = " _-----_",
-                         .cols[1] = "(       \\",
-                         .cols[2] = "\\    0   \\",
-                         .cols[3] = " \\        )",
-                         .cols[4] = " /      _/",
-                         .cols[5] = "(     _-",
-                         .cols[6] = "\\____-",
-                         .cols[7] = " "};
-*/
-
 int main(int argc, char *argv[]) {
   // TODO:
   // Still want to create a custom malloc
@@ -29,10 +17,13 @@ int main(int argc, char *argv[]) {
   uname(info->machine);
   sysinfo(info->system);
   getCPUInfo(info->cpu);
-
-  printer(info);
-  readRamInfo();
-  // should obfuscate this somewhere
+  if (argc > 1) {
+    simple_print(info);
+  } else {
+    printer(info);
+  }
+  // readRamInfo();
+  //  should obfuscate this somewhere
   free(info->cpu->cpuname);
   free(info->cpu);
   free(info->machine);
