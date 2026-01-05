@@ -11,6 +11,6 @@ typedef struct printinfo {
 } printinfo;
 
 void printer(printinfo *print);
-void simple_print();
+void simple_print(printinfo *print);
 
 #endif // !PRINT
