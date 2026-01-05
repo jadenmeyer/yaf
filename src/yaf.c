@@ -1,11 +1,10 @@
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #define _GNU_SOURCE
 #include "common/print.h"
-#include "ram/ram.h"
 // TODO:
 // refine the parser for the CPU information
-// refine the printer methods
-// create a new file to get GPU information???
 
 int main(int argc, char *argv[]) {
   // TODO:
@@ -18,7 +17,13 @@ int main(int argc, char *argv[]) {
   sysinfo(info->system);
   getCPUInfo(info->cpu);
   if (argc > 1) {
-    simple_print(info);
+    if (strcmp(argv[1], "h")) {
+      printf(
+          "There are two modes: \n simple_print: add any arguments to ./yaf "
+          "and you get small pika \n full_print which is full information\n");
+    } else {
+      simple_print(info);
+    }
   } else {
     printer(info);
   }
