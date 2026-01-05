@@ -7,6 +7,9 @@
 #include <unistd.h> //for read
 #define CPUINFO_PATH "/proc/cpuinfo"
 
+// TODO:
+// make an arena allocator to dump all variables super easily
+
 // return a file descriptor
 static int readFile(cpuinfo *cpu) {
   int fd = open(CPUINFO_PATH, O_RDONLY); // readonly look

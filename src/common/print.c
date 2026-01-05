@@ -45,10 +45,4 @@ void printer(printinfo *print) {
   free(uptime_string);
 }
 
-void simple_print(printinfo *print) {
-  printf("%s\n", pika[0]);
-  printf("%s   %s @ %s\n", pika[1], print->machine->sysname,
-         print->machine->nodename);
-  printf("%s   %s\n", pika[2], print->machine->machine);
-  printf("%s   %s\n", pika[3], print->machine->release);
-}
+void simple_print() {}
